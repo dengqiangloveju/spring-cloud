@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.lamic.domain.User;
 
 @RestController
-@RequestMapping(value = "/api/user")
+@RequestMapping(value = "/user")
 public class ApiUserController {
     protected final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
     public User view(@PathVariable int id) {
         User user = new User();
         user.setId(id);
