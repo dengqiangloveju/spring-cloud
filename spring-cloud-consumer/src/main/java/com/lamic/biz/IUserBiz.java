@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @FeignClient(value = "spring-cloud-provider")
 public interface IUserBiz {
 
-    @RequestMapping(value = "/api/user/{id}", method = RequestMethod.GET) 
+    @RequestMapping(value = "/api/user/get/{id}", method = RequestMethod.GET) 
     String view(@PathVariable(value = "id") int id); 
 }

@@ -10,12 +10,12 @@ import com.lamic.biz.IUserBiz;
 
 
 @RestController 
-@RequestMapping(value = "/feign/user") 
+@RequestMapping(value = "/user") 
 public class FeignUserController {
     @Autowired 
     private IUserBiz userBiz; 
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET) 
+    @RequestMapping(value = "/get/{id}", method = RequestMethod.GET) 
     public String get(@PathVariable(value = "id") int id) { 
         return userBiz.view(id); 
     } 
