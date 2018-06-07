@@ -1,5 +1,6 @@
 package com.lamic.controller;
 
+import java.security.Principal;
 import java.util.Date;
 
 import org.slf4j.Logger;
@@ -24,5 +25,10 @@ public class ApiUserController {
         user.setCreateTime(new Date());
         logger.info("请求接口返回：{}", user);
         return user;
+    }
+    
+    @RequestMapping("/getResource")
+    public String getResource(Principal principal) {
+        return "SUCCESS，授权成功拿到资源啦.当前用户：" + principal.getName();
     }
 }
