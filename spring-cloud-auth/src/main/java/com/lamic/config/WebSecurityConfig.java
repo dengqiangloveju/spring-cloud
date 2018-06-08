@@ -25,9 +25,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Override
     public void configure(HttpSecurity http) throws Exception {
-		http.anonymous().disable()
+		/*http.anonymous().disable()
         .authorizeRequests()
-        .anyRequest().authenticated();
+        .anyRequest().authenticated();*/
+		http.csrf().disable()
+		.requestMatchers()
+		.antMatchers("/oauth/**")
+	    .and().authorizeRequests()
+	    .antMatchers("/oauth/**").permitAll();
     }
 	
 	@Bean

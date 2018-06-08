@@ -5,6 +5,7 @@ import java.util.Date;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,8 +17,9 @@ import com.lamic.domain.User;
 @RequestMapping(value = "/user")
 public class ApiUserController {
     protected final Logger logger = LoggerFactory.getLogger(this.getClass());
-
-    @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
+    
+    @RequestMapping(value = "/get/{id}")
+    @PreAuthorize("hasAuthority('ROLE_USER')")
     public User view(@PathVariable int id) {
         User user = new User();
         user.setId(id);
@@ -27,7 +29,8 @@ public class ApiUserController {
         return user;
     }
     
-    @RequestMapping("/getResource")
+    @RequestMapping(value = "/getResource")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public String getResource(Principal principal) {
         return "SUCCESS，授权成功拿到资源啦.当前用户：" + principal.getName();
     }
