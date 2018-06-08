@@ -6,7 +6,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lamic.domain.User;
@@ -16,7 +15,7 @@ import com.lamic.domain.User;
 public class ApiUserController {
     protected final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/get/{id}")
     public User view(@PathVariable int id) {
         User user = new User();
         user.setId(id);
