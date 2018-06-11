@@ -26,10 +26,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
     public void configure(HttpSecurity http) throws Exception {
 		http.csrf().disable();
-	    http.requestMatchers().antMatchers("/oauth/**")
+	    http.requestMatchers().antMatchers("/auth/**")
 	            .and()
 	            .authorizeRequests()
-	            .antMatchers("/oauth/**").permitAll();
+	            .antMatchers("/auth/**").permitAll();
     }
 	
 	@Bean
