@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
+	
 	<parent>
 		<groupId>com.lamic</groupId>
 		<artifactId>spring-cloud</artifactId>
@@ -10,10 +10,10 @@
 		<relativePath>../spring-cloud/pom.xml</relativePath>
 	</parent>
 
-	<artifactId>spring-cloud-consumer</artifactId>
+	<artifactId>spring-cloud-zipkin</artifactId>
 	<packaging>jar</packaging>
-	<name>spring-cloud-consumer</name>
-	<description>spring-cloud-consumer</description>
+	<name>spring-cloud-zipkin</name>
+	<description>spring-cloud-zipkin</description>
 
 	<dependencies>
 		<dependency>
@@ -25,12 +25,12 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-feign</artifactId>
-		</dependency>
-		<dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-zipkin</artifactId>
+            <groupId>io.zipkin.java</groupId>
+            <artifactId>zipkin-server</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.zipkin.java</groupId>
+            <artifactId>zipkin-autoconfigure-ui</artifactId>
         </dependency>
 
 		<dependency>
@@ -41,7 +41,6 @@
 	</dependencies>
 
 	<build>
-		<finalName>spring-cloud-consumer</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -49,6 +48,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
 
 </project>
