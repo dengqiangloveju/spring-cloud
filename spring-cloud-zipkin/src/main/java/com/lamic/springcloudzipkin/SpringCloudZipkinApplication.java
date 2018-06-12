@@ -9,6 +9,7 @@ import zipkin.server.EnableZipkinServer;
 @SpringBootApplication
 @EnableEurekaClient
 @EnableZipkinServer
+//@EnableZipkinStreamServer
 public class SpringCloudZipkinApplication {
 
 	public static void main(String[] args) {

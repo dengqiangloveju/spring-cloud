@@ -4,6 +4,20 @@ server:
 spring:
   application:
     name: spring-cloud-zipkin
+#  rabbitmq: 
+#    host: localhost
+#    port: 5672
+#    username: lamic
+#    password: lamic
+#    virtual-host: lamic_hosts
+zipkin: 
+  collector: 
+    rabbitmq: 
+      addresses: localhost:5672
+      password: lamic
+      username: lamic
+      virtual-host: lamic_hosts
+      queue: zipkin
     
 eureka:
   client:
