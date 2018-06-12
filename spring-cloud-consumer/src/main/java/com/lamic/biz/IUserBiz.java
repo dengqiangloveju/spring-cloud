@@ -5,7 +5,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@FeignClient(value = "spring-cloud-provider")
+import com.lamic.config.FeignConfig;
+
+@FeignClient(value = "spring-cloud-provider", configuration = FeignConfig.class)
 public interface IUserBiz {
 
     @RequestMapping(value = "/api/user/get/{id}", method = RequestMethod.GET) 
