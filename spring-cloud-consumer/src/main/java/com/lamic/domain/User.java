@@ -2,8 +2,16 @@ package com.lamic.domain;
 
 import java.util.Date;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Range;
+
 public class User {
-    private int id;
+	@Range(min=5, max=20, message="5-20")
+	private int id;
+    @NotNull(message="名字不能为空")
+    @Size(min=5, max=10, message="请输入5至10个字符")
     private String name;
     private Date createTime;
 
