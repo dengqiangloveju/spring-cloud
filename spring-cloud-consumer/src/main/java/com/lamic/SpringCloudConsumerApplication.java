@@ -20,7 +20,7 @@ public class SpringCloudConsumerApplication {
     }
     
     @LoadBalanced
-    @Bean  
+    @Bean
     protected RestTemplate restTemplate() {   
         return new RestTemplate();  
     }
