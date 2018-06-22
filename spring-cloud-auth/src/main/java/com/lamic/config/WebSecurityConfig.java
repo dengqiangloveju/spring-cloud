@@ -25,9 +25,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Override
     public void configure(HttpSecurity http) throws Exception {
-		/*http.anonymous().disable()
-        .authorizeRequests()
-        .anyRequest().authenticated();*/
 		http.csrf().disable()
 		.requestMatchers()
 		.antMatchers("/oauth/**")
